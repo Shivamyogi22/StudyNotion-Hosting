@@ -31,11 +31,11 @@ app.use(cookieParse());
 //frontend-backend middleware connection
 app.use(
     cors({
-        // origin: "http://localhost:3000",
-        origin: "https://study-notion-frontend-kappa-two.vercel.app",
-        credentials: true,
+      origin: "https://study-notion-frontend-shivam-yogis-projects.vercel.app",
+      credentials: true,
     })
-);
+  );
+  
 app.use(
     fileUpload({
         useTempFiles:true,
