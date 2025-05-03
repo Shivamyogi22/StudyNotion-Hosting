@@ -29,34 +29,14 @@ app.use(express.json());
 app.use(cookieParse());
 
 //frontend-backend middleware connection
-// app.use(
-//     cors({
-//       origin: "https://study-notion-frontend-shivam-yogis-projects.vercel.app",
-//       credentials: true,
-//     })
-//   );
-  
-const allowedOrigins = [
-    "https://study-notion-frontend-shivam-yogis-projects.vercel.app",
-    "https://study-notion-frontend-sooty.vercel.app",
-    "https://study-notion-frontend-git-main-shivam-yogis-projects.vercel.app",
-    "https://study-notion-frontend-kxt96hupx-shivam-yogis-projects.vercel.app",
-  ];
-  
-  app.use(
+app.use(
     cors({
-      origin: function (origin, callback) {
-        if (!origin || allowedOrigins.includes(origin)) {
-          callback(null, true);
-        } else {
-          callback(new Error("Not allowed by CORS"));
-        }
-      },
+    //   origin: "https://study-notion-frontend-shivam-yogis-projects.vercel.app",
+      origin: "*",
       credentials: true,
     })
   );
   
-
 app.use(
     fileUpload({
         useTempFiles:true,
